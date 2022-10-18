@@ -7,6 +7,7 @@ let canPlace = false;
 var array = [];
 var canPut = "blue";
 var deff = "red";
+var animation_Var = false;
 
 
 function CheckInput() {
@@ -55,6 +56,15 @@ function FillTable(row, col) {
     canPlace = true;
 }
 
+<<<<<<< HEAD
+function put(x,y){
+    if (Check(x,y) && !window.animation_Var){
+        let i = x;
+        control = true;
+        color = new Color(array,x,y, window.deff);
+        !window.array[x][y].color ? window.array[x][y] = color.add_Color() : control = false;
+        //if (window.deff == "red"){window.array[x][y] = color.add_Red(); }else if (window.deff == "blue"){window.array[x][y] = color.add_Blue()}
+=======
 function put(x, y) {
     console.log(Check(x, y));
     if (Check(x, y)) {
@@ -68,13 +78,32 @@ function put(x, y) {
             setNextPlayer("red");
             window.array[x][y] = color.add_Blue()
         }
+>>>>>>> 7983f71902a0b28006640e14f330634158226eb5
         load(window.array);
-        lambda = window.canPut;
-        window.canPut = window.deff;
-        window.deff = lambda;
+        let arrays = [];
+        if (control){
+            let lamdba_Array = [];
+            for (let i = y-1; i > 0; i--){lamdba_Array.push([x,i]); if (window.array[x][i].color == window.deff){for (let k = 0; k < lamdba_Array.length; k++){!arrays[k] ? arrays[k] = [lamdba_Array[k]] : arrays[k].push(lamdba_Array[k]);;};break}if(!window.array[x][i].color){break;}}lamdba_Array = [];
+            for (let i = y+1; i < window.array[x].length; i++){lamdba_Array.push([x,i]); if (window.array[x][i].color == window.deff){for (let k = 0; k < lamdba_Array.length; k++){!arrays[k] ? arrays[k] = [lamdba_Array[k]] : arrays[k].push(lamdba_Array[k]);}; break}if(!window.array[x][i].color){break;}}lamdba_Array = [];
+            for (let i = x+1; i < window.array.length; i++){lamdba_Array.push([i,y]); if (window.array[i][y].color == window.deff){for (let k = 0; k < lamdba_Array.length; k++){!arrays[k] ? arrays[k] = [lamdba_Array[k]] : arrays[k].push(lamdba_Array[k]);};break}if(!window.array[i][y].color){break;}}lamdba_Array = [];
+            for (let i = x-1; i > 0; i--){lamdba_Array.push([i,y]); if (window.array[i][y].color == window.deff){for (let k = 0; k < lamdba_Array.length; k++){!arrays[k] ? arrays[k] = [lamdba_Array[k]] : arrays[k].push(lamdba_Array[k]);};break}if(!window.array[i][y].color){break;}}lamdba_Array = [];
+            i = x-1;j = y-1;while (i >= 0 && j >= 0){lamdba_Array.push([i,j]); if (window.array[i][j].color == window.deff){for (let k = 0; k < lamdba_Array.length; k++){!arrays[k] ? arrays[k] = [lamdba_Array[k]] : arrays[k].push(lamdba_Array[k]);};break}if(!window.array[i][j].color){break;};j--;i--;}lamdba_Array = [];
+            i = x+1;j = y-1;while (i  < window.array.length && j >= 0){lamdba_Array.push([i,j]); if (window.array[i][j].color == window.deff){for (let k = 0; k < lamdba_Array.length; k++){!arrays[k] ? arrays[k] = [lamdba_Array[k]] : arrays[k].push(lamdba_Array[k]);};break};if(!window.array[i][j].color){break;}j--;i++}lamdba_Array = [];
+            i = x-1;j = y+1;while (i >= 0 && j < window.array[i].length){lamdba_Array.push([i,j]); if (window.array[i][j].color == window.deff){for (let k = 0; k < lamdba_Array.length; k++){!arrays[k] ? arrays[k] = [lamdba_Array[k]] : arrays[k].push(lamdba_Array[k]);};break};if(!window.array[i][j].color){break;}j++;i--}lamdba_Array = [];
+            i = x+1;j = y+1;while (i < window.array.length && j < window.array[i].length){lamdba_Array.push([i,j]); if (window.array[i][j].color == window.deff){for (let k = 0; k < lamdba_Array.length; k++){!arrays[k] ? arrays[k] = [lamdba_Array[k]] : arrays[k].push(lamdba_Array[k]);};break};if(!window.array[i][j].color){break;}j++;i++}lamdba_Array = [];
+        }
+        animation(arrays);
+        
     }
 }
 
+<<<<<<< HEAD
+function Check(x,y){
+    if (!window.array[x][y].selected && !window.animation_Var){
+    for (let i = 0; i < window.array.length; i++) {
+        for (let j = 0; j < window.array[i].length; j++){
+            if (window.array[i][j].selected){window.array[i][j].selected = false; document.getElementById(window.array[i][j].id).padding = "2px"}
+=======
 function Check(x, y) {
     if (!window.array[x][y].selected) {
         for (let i = 0; i < window.array.length; i++) {
@@ -84,6 +113,7 @@ function Check(x, y) {
                     document.getElementById(window.array[i][j].id).padding = "2px"
                 }
             }
+>>>>>>> 7983f71902a0b28006640e14f330634158226eb5
         }
         if (!window.array[x][y].color && ((x > 0 ? window.array[x - 1][y].color == window.canPut : false) || (y > 0 ? window.array[x][y - 1].color == window.canPut : false) || (x < window.array.length - 1 ? window.array[x + 1][y].color == window.canPut : false) || (window.array[x].length - 1 > y ? window.array[x][y + 1].color == window.canPut : false))) {
             for (let i = 0; i < window.array[x].length; i++) {

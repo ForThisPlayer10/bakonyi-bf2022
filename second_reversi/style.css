@@ -8,3 +8,12 @@ table{
     margin-left: auto;
     margin-right: auto;
 }
+
+@keyframes roll_Animation {
+    from {transform: rotateX(0deg);}
+  to {transform: rotate(359deg);}
+}
+
+.roll{
+    animation: roll_Animation 0.1s;
+}
