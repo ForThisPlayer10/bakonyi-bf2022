@@ -1,4 +1,5 @@
 const timer = document.getElementById("timer");
+const nextPlayer = document.getElementById("next");
 const t = document.getElementById("puzzle")
 let table;
 let len;
@@ -26,8 +27,10 @@ function CheckInput() {
         timer.innerHTML = `Time: ${time}`;
         time++;
     }, 1000);
+    setNextPlayer("red");
 }
 
+const setNextPlayer = (color) => color == "red" ? nextPlayer.innerHTML = "Kovetkezo: piros" : nextPlayer.innerHTML = "Kovetkezo: kek";
 
 function FillTable(row, col) {
     window.array = [];
@@ -59,8 +62,10 @@ function put(x, y) {
         control = false;
         color = new Color(array, x, y);
         if (window.deff == "red") {
+            setNextPlayer("blue");
             window.array[x][y] = color.add_Red()
         } else if (window.deff == "blue") {
+            setNextPlayer("red");
             window.array[x][y] = color.add_Blue()
         }
         load(window.array);
