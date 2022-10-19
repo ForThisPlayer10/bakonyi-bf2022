@@ -6,12 +6,11 @@ let len;
 let canPlace = false;
 var array = [];
 var canPut = "blue";
-var deff = "red";
+var deff = "red"; // mi az a deff
 
 
 function CheckInput() {
     let x = document.getElementById("in").value;
-    //isNaN(x) ? alert("Számot üss be!") : x%2 ==0 ? alert("Páros számot üss be!") : len=x FillTable(x, x);
     if (isNaN(x)) {
         alert("Számot írj be!");
     } else if (x % 2 != 0) {
@@ -43,7 +42,9 @@ function FillTable(row, col) {
                 x: j,
                 isItFree: true,
                 worth: 0,
-                selected: false
+                selected: false,
+                index: i * col + j,
+
             });
         }
     }
@@ -71,11 +72,12 @@ function put(x, y) {
         load(window.array);
         lambda = window.canPut;
         window.canPut = window.deff;
-        window.deff = lambda;
+        window.deff = lambda; //miez
     }
 }
 
 function Check(x, y) {
+    let debug = [];
     if (!window.array[x][y].selected) {
         for (let i = 0; i < window.array.length; i++) {
             for (let j = 0; j < window.array[i].length; j++) {
@@ -101,6 +103,7 @@ function Check(x, y) {
                     if (window.array[i][k].color == deff) {
                         window.array[x][y].selected = true;
                     }
+                    debug.push(array[x][k]);
                 }
             }
             for (let i = x; i > 0; i--) {
@@ -108,6 +111,7 @@ function Check(x, y) {
                     if (window.array[i][k].color == deff) {
                         window.array[x][y].selected = true;
                     }
+                    debug.push(array[x][k]);
                 }
             }
             for (let i = x; i < window.array.length; i++) {
@@ -115,6 +119,7 @@ function Check(x, y) {
                     if (window.array[i][k].color == deff) {
                         window.array[x][y].selected = true;
                     }
+                    debug.push(array[x][k]);
                 }
             }
             for (let i = x; i > 0; i--) {
@@ -122,25 +127,22 @@ function Check(x, y) {
                     if (window.array[i][k].color == deff) {
                         window.array[x][y].selected = true;
                     }
+                    debug.push(array[x][k]);
                 }
             }
         } //lerakas
         load(window.array);
     }
+    console.log(array[x][y].index)
     return array[x][y].selected;
 }
 
 function Move(r, c) {
-    /*const start = {
-        col: document.getElementsByTagName("td")[c],
-        row: document.getElementsByTagName("td")[r],
-    };
-    //console.log(row);
-    //console.log(col);
-    console.log("Row: " + start.row.className);
-    console.log("Col: " + start.col.className);*/
-    //console.table(r, c);
-
+    let current = {
+        row: r,
+        column: c,
+        index: 
+    }
 
 
 }
