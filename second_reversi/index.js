@@ -76,10 +76,11 @@ function Check(x,y){
     if (!window.array[x][y].color && ((x > 0 ? window.array[x-1][y].color == window.canPut : false) || (y > 0 ? window.array[x][y-1].color == window.canPut : false) || (x < window.array.length-1 ? window.array[x+1][y].color == window.canPut : false) || (window.array[x].length-1 > y ? window.array[x][y+1].color == window.canPut : false))){
         for (let i = 0; i < window.array[x].length; i++){if (window.array[x][i].color == deff){window.array[x][y].selected = true;}}
         for (let i = 0; i < window.array.length; i++){if (window.array[i][y].color == deff){window.array[x][y].selected = true;}}
-        for (let i = x; i < window.array.length; i++){for (let k = y; k < window.array[i].length; k++){if (window.array[i][k].color == deff){window.array[x][y].selected = true;}}}
-        for (let i = x; i > 0; i--){for (let k = y; k > 0; k--){if (window.array[i][k].color == deff){window.array[x][y].selected = true;}}}
-        for (let i = x; i < window.array.length; i++){for (let k = y; k > 0; k--){if (window.array[i][k].color == deff){window.array[x][y].selected = true;}}}
-        for (let i = x; i > 0; i--){for (let k = y; k < window.array[i].length; k++){if (window.array[i][k].color == deff){window.array[x][y].selected = true;}}}
+        i = x-1;j = y-1;while (i >= 0 && j >= 0){if (window.array[i][k].color == deff){window.array[i][j].selected = true;};j--;i--;}
+        i = x+1;j = y-1;while (i  < window.array.length && j >= 0){if (window.array[i][k].color == deff){window.array[i][j].selected = true;};j--;i--;}
+        i = x-1;j = y+1;while (i >= 0 && j < window.array[i].length){if (window.array[i][k].color == deff){window.array[i][j].selected = true;};j--;i--;}
+        i = x+1;j = y+1;while (i < window.array.length && j < window.array[i].length){if (window.array[i][k].color == deff){window.array[i][j].selected = true;};j--;i--;}
+        if (window.array[i][k].color == deff){window.array[x][y].selected = true;}
     }
     load(window.array);
     }
