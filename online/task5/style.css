@@ -1,0 +1,82 @@
+html,body {
+    height: 100%;
+}
+
+#container{
+    width: 50%;
+    height:100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    margin:0
+}
+
+#round0{
+    height: fit-content;
+
+}
+
+section > div{
+    width: 100px;
+    height : 20px;
+    border: 1px solid grey;
+    margin: 10px 0;
+    margin-left: 20px;
+    background: grey;
+    color: white;
+    padding: 10px 10px 10px 10px;
+}
+
+section > div:nth-child(2n){
+    margin-bottom: 20px;
+}
+
+#round1{
+    max-height: fit-content;
+}
+#round1 > div{
+    width: 100px;
+    height : 20px;
+    border: 1px solid grey;
+    margin: 40px 0;
+    margin-left: 20px;
+    background: grey;
+    color: white;
+    padding: 10px 10px 10px 10px;
+}
+
+#round2{
+    height: 50%;
+}
+#round2 > div{
+    margin-bottom: 20px;
+}
+
+#round3{
+    height: 50%;
+}
+#round3 > div{
+    margin-bottom: 20px;
+}
+
+#round4{
+    height: 50%;
+}
+#round4 > div{
+    margin-bottom: 20px;
+}
+
+#round5{
+    height:50%;
+
+}
+#round5 > div {
+    width: 100px;
+    height : 20px;
+    border: 1px solid grey;
+    margin: 40px 0;
+    margin-left: 20px;
+    background: grey;
+    color: white;
+    padding: 10px 10px 10px 10px;
+}
