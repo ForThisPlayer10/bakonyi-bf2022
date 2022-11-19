@@ -50,6 +50,7 @@ const boolean = (x) => x == 0 ? 0 : 1;
 
 
 
+
 const getValues = (values, type) =>{
     boolean_Valeus = [];
     for (let i = 0; i < values.length; i++){
