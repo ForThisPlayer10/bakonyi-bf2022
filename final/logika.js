@@ -9,6 +9,15 @@ class logic_Operators{
         }
         return result;
     }
+    static eq (p1, p2) {
+        return p1==p2 ? 1 : 0;
+    }
+    static neq (p1, p2) {
+        return p1==p2 ? 0 : 1;
+    }
+    static comp (p1, p2) {
+        return p1 < p2 ? 1 : 0;
+    }
 }
 
 
@@ -25,4 +34,4 @@ const getValues = (values, type) =>{
 
 }
 
-console.log(getValues([0,12,210,21,10,1,0]));
+console.log(logic_Operators.comp(4,4));
