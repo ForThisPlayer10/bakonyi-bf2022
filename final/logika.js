@@ -25,6 +25,16 @@ class logic_Operators{
         }
         return control;
     }
+    static min (arr) {
+        let min = arr[1];
+        arr.forEach(x => {if(x < min) min = x});
+        return min;
+    }
+    static max (arr) {
+        let max = arr[1];
+        arr.forEach(x => {if(x > max) max = x});
+        return max;
+    }
 }
 
 
@@ -41,4 +51,4 @@ const getValues = (values, type) =>{
 
 }
 
-console.log(logic_Operators.comp(4,4));
+console.log(logic_Operators.max([10, 3254, 1,4, ,1, ,1]));
