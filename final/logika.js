@@ -43,6 +43,23 @@ class logic_Operators{
         return max;
     }
     static or(list){let control = 0;for (let i = 0; i < list.length; i++){list[i] == 1 ? control = 1 : 0;}return control;}
+    static nor(arr){
+        let ret = 1;
+        arr.forEach(x=>{
+            if(x == 1) ret = 0;
+        })
+        return ret;
+    }
+    static nand(arr) {
+        var ret = 0;
+        arr.forEach(x => {
+            if(x == 0) ret = 1;
+        })
+        return ret;
+    }
+    static pass (p1, p2) {
+        return p1 == 0 ? 0 : p2;
+    }
 }
 
 
@@ -59,4 +76,4 @@ const getValues = (values, type) =>{
 
 }
 
-console.log(logic_Operators.max());
+console.log(logic_Operators.pass(0, 10));
