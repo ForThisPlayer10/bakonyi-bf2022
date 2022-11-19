@@ -32,7 +32,7 @@ class logic_Operators{
 }
 
 
-const boolean = (x)=> x == 0 ? 0 : 1;
+const boolean = (x) => x == 0 ? 0 : 1;
 
 
 
