@@ -18,6 +18,13 @@ class logic_Operators{
     static comp (p1, p2) {
         return p1 < p2 ? 1 : 0;
     }
+    static or(list){
+        let control = 0;
+        for (let i = 0; i < list.length; i++){
+            list[i] == 1 ? control = 1 : 0;
+        }
+        return control;
+    }
 }
 
 
