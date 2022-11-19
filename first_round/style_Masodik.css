@@ -1,0 +1,86 @@
+body{
+    background-color: #232423;
+    color: #d6d6d6;
+    font-family: Arial;
+}
+
+.movies_Type_Div{
+    padding: 3px;
+    margin: 2px;
+}
+
+#radiobuttons_likeable{
+    width: max-content;
+    border-radius: 3px;
+    display: inline-table;
+    padding: 10px;
+}
+#radiobuttons_unlikeable{
+    width: max-content;
+    border-radius: 3px;
+    display: inline-table;
+    padding: 10px;
+}
+
+#search_Panel{
+    display: inline-table;
+    width: 20%;
+    min-width: 300px;
+    box-shadow: 1px 2px 2px 2px #050505;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#movies{
+    display: inline-table;
+    width: 60%;
+    margin-left: 20px;
+}
+
+.movies_Grid_Div{
+    width: 200px;
+    margin: 2px;
+}
+
+.movies_Grid_Div{
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 2px 1px 1px #050505;
+    padding: 15px;
+    display: inline-block;
+}
+
+.categories{
+    display: block;
+}
+
+#turner{
+    width: max-content;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.turner_Button{
+    transition: 0.1s;
+    width: 27px;
+    height: 27px;
+    margin: 3px;
+    border: none;
+    background-color: #666666;
+    color: #d6d6d6;
+    border-radius: 3px;
+    box-shadow: 0.6px 0.8px 0.6px 0.6px #050505;
+    text-align: center;
+}
+
+.turner_Button:hover{
+    transition: 0.3s;
+    box-shadow: 1px 2px 1px 1px #050505;
+    cursor: pointer;
+}
+
+.menu{
+    height: 50px;
+    background-color: lightseagreen;
+    transition: 500ms;
+}

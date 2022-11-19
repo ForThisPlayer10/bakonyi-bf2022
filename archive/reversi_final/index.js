@@ -1,3 +1,5 @@
+const timer = document.getElementById("timer");
+const nextPlayer = document.getElementById("next");
 const t = document.getElementById("puzzle")
 let table;
 let len;
@@ -22,7 +24,15 @@ function CheckInput() {
         len = x;
         FillTable(x, x);
     }
+    let time = 0;
+    setInterval(() => {
+        timer.innerHTML = `Time: ${time}`;
+        time++;
+    }, 1000);
+    setNextPlayer("red");
 }
+
+const setNextPlayer = (color) => color == "red" ? nextPlayer.innerHTML = "Kovetkezo: piros" : nextPlayer.innerHTML = "Kovetkezo: kek";
 
 function FillTable(row, col) {
     window.array = [];
@@ -48,6 +58,9 @@ function put(x,y){
         color = new Color(array,x,y, window.deff);
         !window.array[x][y].color ? window.array[x][y] = color.add_Color() : control = false;
         //if (window.deff == "red"){window.array[x][y] = color.add_Red(); }else if (window.deff == "blue"){window.array[x][y] = color.add_Blue()}
+        if (window.deff == "red") setNextPlayer("blue")
+        else if (window.deff == "blue") setNextPlayer("red");
+
         load(window.array);
         let arrays = [];
         if (control){
@@ -76,10 +89,11 @@ function Check(x,y){
     if (!window.array[x][y].color && ((x > 0 ? window.array[x-1][y].color == window.canPut : false) || (y > 0 ? window.array[x][y-1].color == window.canPut : false) || (x < window.array.length-1 ? window.array[x+1][y].color == window.canPut : false) || (window.array[x].length-1 > y ? window.array[x][y+1].color == window.canPut : false))){
         for (let i = 0; i < window.array[x].length; i++){if (window.array[x][i].color == deff){window.array[x][y].selected = true;}}
         for (let i = 0; i < window.array.length; i++){if (window.array[i][y].color == deff){window.array[x][y].selected = true;}}
-        for (let i = x; i < window.array.length; i++){for (let k = y; k < window.array[i].length; k++){if (window.array[i][k].color == deff){window.array[x][y].selected = true;}}}
-        for (let i = x; i > 0; i--){for (let k = y; k > 0; k--){if (window.array[i][k].color == deff){window.array[x][y].selected = true;}}}
-        for (let i = x; i < window.array.length; i++){for (let k = y; k > 0; k--){if (window.array[i][k].color == deff){window.array[x][y].selected = true;}}}
-        for (let i = x; i > 0; i--){for (let k = y; k < window.array[i].length; k++){if (window.array[i][k].color == deff){window.array[x][y].selected = true;}}}
+        i = x-1;j = y-1;while (i >= 0 && j >= 0){if (window.array[i][j].color == deff){window.array[x][y].selected = true;};j--;i--;}
+        i = x+1;j = y-1;while (i  < window.array.length && j >= 0){if (window.array[i][j].color == deff){window.array[x][y].selected = true;};j--;i++;}
+        i = x-1;j = y+1;while (i >= 0 && j < window.array[i].length){if (window.array[i][j].color == deff){window.array[x][y].selected = true;};j++;i--;}
+        i = x+1;j = y+1;while (i < window.array.length && j < window.array[i].length){if (window.array[i][j].color == deff){window.array[x][y].selected = true;};j++;i++;}
+        console.log(window.array);
     }
     load(window.array);
     }

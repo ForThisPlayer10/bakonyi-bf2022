@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    background: darkgray;
+    overflow: hidden;
+    align-items: center;
+}
+#mainCanvas, #container{
+    /*border: 7px solid grey;*/
+    background-color: white;
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 1600px;
+    height: 1000px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+#speedSlider{
+    position: absolute;
+    bottom:100%;
+    left: 40%;
+    width: 300px;
+    height: 50px;
+}
+
+
+
+.center {
+    margin: 0;
+    width: 60%;
+    height: 60%;
+    /*padding: 10px;*/
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+}
