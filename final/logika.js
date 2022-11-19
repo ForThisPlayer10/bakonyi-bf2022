@@ -9,6 +9,13 @@ class logic_Operators{
         }
         return result;
     }
+    static or(list){
+        let control = 0;
+        for (let i = 0; i < list.length; i++){
+            list[i] == 1 ? control = 1 : 0;
+        }
+        return control;
+    }
 }
 
 
@@ -21,8 +28,8 @@ const getValues = (values, type) =>{
     for (let i = 0; i < values.length; i++){
         boolean_Valeus.push(boolean(values[i]));
     }
-    return boolean_Valeus;
+    return logic_Operators.or(boolean_Valeus);
 
 }
 
-console.log(getValues([0,12,210,21,10,1,0]));
+console.log(getValues([0,0,0,0,0,0,0]));
