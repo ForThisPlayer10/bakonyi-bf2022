@@ -1,10 +1,16 @@
-class additionalSources{
-    constructor(){
-        this.lightLevel = 0.0;
-        this.temperature = 0.0;
-        this.location = 0.0;
-        this.value = 0.0;
-        this.proximity = 0.0;
-    }
-
-}
+var dataOfHause = {
+    A : 0,
+    B : 0,
+    C : 0,
+    D : 0,
+    E : 0,
+    F : 0,
+    G : 0,
+    H : 0,
+    I : 0,
+    J : 0,
+    K : 0,
+    L : 0,
+    M : 0,
+    N : 0
+};

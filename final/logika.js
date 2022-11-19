@@ -67,14 +67,3 @@ const boolean = (x) => x == 0 ? 0 : 1;
 
 
 
-
-const getValues = (values, type) =>{
-    boolean_Valeus = [];
-    for (let i = 0; i < values.length; i++){
-        boolean_Valeus.push(boolean(values[i]));
-    }
-    return boolean_Valeus;
-
-}
-
-console.log(logic_Operators.pass(0, 10));
