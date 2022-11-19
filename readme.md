@@ -1,5 +1,9 @@
 # Bakonyi bitfaragó geci
 
+# országos 3. hely gg palik
+
+----------
+
 # Hataridok
 
 * 3\. fordulo kezdet: október 20
