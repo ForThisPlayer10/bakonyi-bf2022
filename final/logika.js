@@ -1,4 +1,18 @@
 class logic_Operators{
+        constructor(name, value){
+        let obj = {
+            "NOT" : this.not,
+            "AND" : this.and,
+            "OR" : this.or,
+            "EQ" : this.eq,
+            "NEQ" : this.neq,
+            "COMP" : this.comp,
+            "MIN" : this.min,
+            "MAX" : this.max,
+            "MIN" : this.min
+        }
+        name ? obj[name](value) : false;
+    }
     static not(x){
         return 1-x;
     }
@@ -45,4 +59,4 @@ const getValues = (values, type) =>{
 
 }
 
-console.log(logic_Operators.max([10, 3254, 1,4, ,1, ,1]));
+console.log(logic_Operators.max());
