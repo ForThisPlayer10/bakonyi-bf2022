@@ -41,6 +41,7 @@ function FillTable(row, col) {
 }
 
 function put(x,y){
+
     if (Check(x,y) && !window.animation_Var){
         let i = x;
         control = true;
